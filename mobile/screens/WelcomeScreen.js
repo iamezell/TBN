@@ -1,15 +1,19 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import React, { Component } from 'react';
+import Slides from '../components/Slides';
 
-class WelcomeScreen extends Component{
-  constructor(props) {
-    super(props)
+const SLIDE_DATA = [
+    { text: 'We are here' },
+    { text: 'to help you' },
+    { text: 'make money.' },
+];
+
+export default class WelcomeScreen extends Component {
+  onSlidesComplete = () => (e) => {
+    this.props.navigation.navigate('auth');
   }
-  render (){
+  render() {
     return (
-      <View>
-        <Text>WelcomeScreen</Text>
-      </View>
-    )
+      <Slides data={SLIDE_DATA} onComplete={this.onSlidesComplete()} />
+    );
   }
 }
