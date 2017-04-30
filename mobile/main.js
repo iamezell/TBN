@@ -25,6 +25,11 @@ class App extends React.Component {
           },
         }),
       },
+    }, {
+      lazyLoad: true,
+      navigationOptions: {
+        tabBarVisible: false,
+      },
     });
 
     return (
